@@ -1,6 +1,6 @@
 import time
 import sys
-import pygame
+
 
 def display_poem(poem):
     for line in poem:
@@ -16,14 +16,7 @@ def save_poem_to_file(poem, filename):
         for line in poem:
             file.write(line + '\n')
 
-def play_modahi(audio_file):
-    pygame.mixer.init()  
-    pygame.mixer.music.load(audio_file)  
-    pygame.mixer.music.play()  
 
-    
-    while pygame.mixer.music.get_busy():
-        time.sleep(1)
 
 def main():
     poem = [
@@ -83,8 +76,7 @@ def main():
     print("\nشعر با موفقیت در فایل 'poem.txt' ذخیره شد.")
 
    
-    print("\nدر حال پخش مداحی...")
-    play_modahi('Shokri - Ali 2.mp3') 
+    
 
 if __name__ == "__main__":
     main()
